@@ -4,6 +4,7 @@ let area = document.querySelector(".area")
 let instruction = document.querySelector(".instruction")
 let video = document.querySelector(".video")
 let img = document.querySelector(".img")
+let source = document.querySelector(".source")
 
 const url = "https://www.themealdb.com/api/json/v1/1/random.php";
 
@@ -12,23 +13,33 @@ async function getRecipe() {
     console.log(response);
     let data = await response.json();
     console.log(data.meals[0]);
-    dishName.innerText = data.meals[0].strMeal;
-    // console.log(`Dish Name: ${data.meals[0].strMeal}`);
+    dishName.innerText =`Dish Name: ${data.meals[0].strMeal}`;
 
-    category.innerText = data.meals[0].strCategory;
-    // console.log(`Dish Category: ${data.meals[0].strCategory}`);
+    category.innerText = `Category: ${data.meals[0].strCategory}`;
 
-    area.innerText = data.meals[0].strArea;
-    // console.log(`Dish Area: ${data.meals[0].strArea}`);
+    area.innerText = `Rigion: ${data.meals[0].strArea}`;
 
-    instruction.innerText = data.meals[0].strInstructions;
-    // console.log(`Dish Instructions: ${data.meals[0].strInstructions}`);
+    instruction.innerText = ` ${data.meals[0].strInstructions}`;
 
-    video.innerText = data.meals[0].strYoutube;
-    video.setAttribute("href", data.meals[0].strYoutube)
-    // console.log(`Dish Video: ${data.meals[0].strYoutube}`);
+    if (data.meals[0].strYoutube == "") {
+        video.innerText = "Video Unavailable";
+        video.style.color = "black";
+        video.style.textDecoration = "none";
+    } else {
+        video.setAttribute("href", data.meals[0].strYoutube)
+        video.innerText = `Video Link: ${data.meals[0].strYoutube}`
+    }
 
-    img.innerText = data.meals[0].strMealThumb;
-    img.setAttribute("href", data.meals[0].strMealThumb)
-    // console.log(`Dish Thumbnail: ${data.meals[0].strMealThumb}`);
+    img.setAttribute("src", data.meals[0].strMealThumb)
+
+    if (data.meals[0].strSource == "") {
+        video.innerText = "Source Unavailable";
+        video.style.color = "black";
+        video.style.textDecoration = "none";
+    } else {
+         source.setAttribute("src", data.meals[0].strSource)
+        source.innerText = `Video Source: ${data.meals[0].strSource}`
+    }
 }
+
+getRecipe();

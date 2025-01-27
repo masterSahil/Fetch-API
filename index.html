@@ -5,18 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/stylesheet.css">
 </head>
 <body>
 
     <div class="container">
-        <h1 class="dishName"></h1>
-        <h2 class="category"></h2>
-        <p class="area"></p>
-        <p class="instruction"></p>
-        <a class="video" href="" target="_blank"></a><br>
-        <a class="img" href="" target="_blank"></a><br><br><br>
+        <div class="content">
+            <img class="img"></img>
+        </div>
+        <div class="content">
+            <h1 class="dishName"></h1>
+            <h2 class="category"></h2>
+            <p class="area"></p>
+            <p class="instruction-para">instruction: </p>
+            <p class="instruction"></p>
+    
+            <a href="" target="_blank" class="video"></a><br>
 
-        <button class="btn" onclick="getRecipe()">Generate a Random Recipe</button>
+            <p class="source"></p><br>
+    
+            <button class="btn" onclick="getRecipe()">Generate a Random Recipe</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
