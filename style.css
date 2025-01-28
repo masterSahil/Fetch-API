@@ -3,39 +3,47 @@ body{
     font-weight: 500;
 }
 .container{
-    max-width: 60vw;
+    max-width: 80vw;
     height: auto;
-    margin: 0 auto;
+    margin: 5vw auto 2vw auto;
     box-shadow: 0 0 10px 1px blue;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-content: center;
     border-radius: 10px;
     overflow: hidden;
 }
+.containing{
+    display: flex;
+}
+.containing .content:first-child{
+    height: 28vw;
+}
+.containing2{
+    padding: 1vw;
+    border-top: 2px solid blue;
+}
 .img{
-    height: 30vw;
+    height: inherit;
     width: 100%;
     object-fit: cover;
     margin: 0 auto;
     border: none;
 }
-video{
-    height: 20vw;
-    width: 100%;
-}
 .dishName{
     font-family: 'Inaptly';
     font-weight: 500;
 }
-.instruction{
+.instruction, .instruction-para{
     text-indent: 20px;
-}
-.container .content:first-child{
-    min-width: 100%;
+    font-size: 18px;
 }
 .container .content:last-child{
-    padding: 3vw;
+    padding: 1vw;
+}
+.content{
+    width: 40vw;
+    font-size: 18px;
 }
 .btn {
     display: inline-block;
@@ -51,7 +59,6 @@ video{
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
-    margin-top: 2vw;
 }
 .btn:hover {
     background: linear-gradient(135deg, #2575fc, #6a11cb);

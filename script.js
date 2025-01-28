@@ -30,8 +30,6 @@ async function getRecipe() {
         video.innerText = `Video Link: ${data.meals[0].strYoutube}`
     }
 
-    img.setAttribute("src", data.meals[0].strMealThumb)
-
     if (data.meals[0].strSource == "") {
         video.innerText = "Source Unavailable";
         video.style.color = "black";
@@ -40,6 +38,8 @@ async function getRecipe() {
          source.setAttribute("src", data.meals[0].strSource)
         source.innerText = `Video Source: ${data.meals[0].strSource}`
     }
+
+    img.setAttribute("src", data.meals[0].strMealThumb)
 }
 
 getRecipe();
